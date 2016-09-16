@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Calculator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div>
+			<h2>Select any</h2>
+
+
+			<form  action="#"  role="form" th:action="@{/fetchLogs}" method="post"	th:object="${logType}">
+			
+				<div class="form-group">
+					<label>Select Log type</label>
+				 <label class="radio-inline"><input type="radio" name="logTypeSelect" id="optionsRadiosInline1"	value="error"  />Error</label> 
+				 <label class="radio-inline"><input type="radio" name="logTypeSelect" id="optionsRadiosInline2" value="Info" />Info</label>
+				 <label class="radio-inline"><input type="radio" name="logTypeSelect" id="optionsRadiosInline3" value="Debug"  />Debug</label>
+				</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+
+		</div>
+
+
+		<div>
+			<h2>Result</h2>
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td th:text="${logTrace}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
