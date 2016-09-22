@@ -23,7 +23,7 @@ public class ControllerClient
   public String addEmployee(@ModelAttribute LogType num,Model model){
     
     RestTemplate restTemplate = new RestTemplate();
-    LogType trace= restTemplate.postForObject("http://localhost:1111/fetchLog",num ,LogType.class);
+    LogType trace= restTemplate.postForObject("http://192.168.206.93:1111/fetchLog",num ,LogType.class);
     model.addAttribute("logTrace",trace.getLogTrace() );
     return "index";
   }
